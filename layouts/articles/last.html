@@ -2,7 +2,7 @@
 
  {{ define "content" }} 
 <div class="listview-outlook" >
-    {{ $list := where (where .Site.Pages "Type" "article") ".Params.notsingle" "!=" true }} 
+    {{ $list := where (where .Site.Pages "Section" "articles") ".Params.notsingle" "!=" true }} 
     {{ range  where $list "Date" ">" (now.AddDate 0 0 -30)  }}  
     <div class="list">
         <div class="list-content">

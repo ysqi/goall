@@ -1,6 +1,6 @@
 {{ define "content" }} 
 <div> 
-        {{ $list := where (where .Site.AllPages "Section" "article") ".Params.notsingle" "!=" true }} 
+        {{ $list := where (where .Site.AllPages "Section" "articles") ".Params.notsingle" "!=" true }} 
         {{ range $list.GroupByDate "2006-01" "desc" }} 
             <div >
                 <div class="heading">
