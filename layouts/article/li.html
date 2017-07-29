@@ -1,0 +1,21 @@
+<div class="list">
+        <div class="list-content">
+            <span class="list-title"> 
+                <div> <a href="{{.Params.link}}" class="fg-black fg-hover-blue"> {{.Title}}</a></div>
+                   </span>
+            <span class="list-remark">
+                 <div class="place-left">
+                <a href="https://github.com/{{.Params.by}}">{{.Params.by}}</a> 在{{dateFormat "15:04" .Date}} 提交 
+                 <span>{{absURL .Params.link }}</span>
+                 </div>
+                 <div class="place-left"> <ul class="tags mini ">
+                        {{range .Params.tags}}
+                            <li><a href="#" >{{.}}</a> </li>
+                        {{end}} 
+                </ul>
+                     </div>  
+
+            <span class="place-right">评论</span>
+            </span>
+        </div>
+    </div>

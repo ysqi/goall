@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    {{partial "header.html" .}}
+</head> 
+<body>
+    <header>
+        {{partial "appbar.html" .}}
+    </header>
+    <main class="container page-content">
+        <div class="fixed-bottom"> 
+            <a class="button success block-success" href="{{absURL  "article.html"}}">最新</a>
+            <a class="button warning block-warning" href="{{absURL  "article/last.html"}}">最近</a>
+            <a class="button danger block-danger" href="{{absURL  "article/hot.html"}}">热门</a>
+            <a class="button info block-info" href="{{absURL  "article/history.html"}}">所有</a>
+        </div> 
+        <content>
+            {{ block "content" . }} {{ end }}
+        </content>
+    </main>
+    <footer class="container"> 
+        {{partial "footer.html" .}}
+    </footer>
+</body>
+
+</html>
