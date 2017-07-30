@@ -1,0 +1,29 @@
+<div class="carousel square-bullets" data-role="carousel" data-height="200" data-controls="false">
+    {{ $list := where (where .Site.Pages "Section" "news") ".Params.notsingle" "!=" true }} 
+     {{ range last 5 $list  }}    
+        {{if .Params.image}}
+            <div class="slide ginfo"> 
+                <a href="{{.URL}}">
+                <div class="image-container">
+                    <div class="frame"><img src="{{.Params.image}}"></div>
+                    <div class="image-overlay op-green">
+                        <h2>{{.Title}}</h2>
+                        <p>
+                            {{.Description}}
+                        </p>
+                    </div>
+                </div>
+                </a>
+            </div>
+                {{else}}
+                    <div class="slide padding20 ginfo">
+                <a href="{{.URL}}" class="fg-black"> 
+                <h2>{{.Title}}</h2>
+                <p class="text-small">
+                    {{.Description}}
+                </p>
+                </a>
+            </div>
+        {{end}}
+     {{end}} 
+</div>

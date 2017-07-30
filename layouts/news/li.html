@@ -1,0 +1,15 @@
+<li>
+
+    <h4 class="no-margin-top">
+        <small> {{.Date.Format "01-02"}}</small>
+        <a href="{{.Params.link}}" class="fg-black fg-hover-blue"> {{.Title}}</a>
+    </h4>
+    <hr class="split">
+    <div class="padding20 no-padding-top">
+        <p class="indent-paragraph"> {{.Summary}}
+            <p>
+                <small class="place-right fg-grayLighter"> 
+                                        <a href="{{.URL}}"> <span class="mif-bubble mif-2x"></span></a> 
+                                    </small>
+    </div>
+</li>

@@ -1,3 +1,4 @@
+{{ $currentPage := . }}
 <div class="app-bar fixed-top grayLight">
     <a class="app-bar-element">
         <span id="toggle-tiles-dropdown" class="mif-apps mif-2x"></span>
@@ -29,18 +30,12 @@
             </div>
         </div> 
     </a>
-       <span class="app-bar-divider"></span>
-
+    <span class="app-bar-divider"></span> 
     <ul class="app-bar-menu">
-        <li><a href="/article.html">文章</a></li>
-        <li><a href="">资讯</a></li>
-        <li><a href="">招聘</a></li>
-        <li><a href="">书籍</a></li>
-        <li><a href="">库包</a></li>
-        <li><a href="">工具</a></li>
-        <li><a href="">开源项目</a></li>
-         <li><a href="">评论</a></li>
-        <li><a href="">GitHub</a></li>
-        <li><a href="">关于</a></li>  
-    </ul>
+        {{ range .Site.Menus.global}} 
+            <li {{if or ($currentPage.IsMenuCurrent "global" .) ( hasPrefix  $currentPage.RelPermalink .Post) }}class="active"{{ end }} >
+                <a href="{{.URL}}" >{{.Name}}</a> 
+            </li>
+        {{end}} 
+    </ul> 
 </div>

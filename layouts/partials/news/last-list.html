@@ -1,0 +1,9 @@
+<div>
+    <h6>最新资讯</h6>
+<ul>
+     {{ $list := where (where .Site.Pages "Section" "news") ".Params.notsingle" "!=" true }} 
+     {{ range last 5 $list  }}    
+    <li> <a class="fg-black" href="{{.URL}}"> {{.Title}}</a></li> 
+     {{end}}
+</ul>
+</div>
