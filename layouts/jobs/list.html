@@ -1,0 +1,8 @@
+{{ define "content" }}
+<div class="listview-outlook" > 
+                {{ $list := (where .Data.Pages.ByDate ".Params.notsingle" "==" nil ) }} 
+                {{ range first 50 $list }}
+                 {{ .Render "li"}} 
+                {{end}} 
+</div>
+{{ end }}

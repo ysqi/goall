@@ -1,0 +1,44 @@
+{{ define "content" }}
+<article class="entry writingsentry" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        <h1 itemprop="headline">
+            <a rel="bookmark" href="{{.URL}}" class="fg-black">{{ .Title }}</a>
+        </h1>
+        <p class="attribution" class="fg-grayLight">
+            <span itemprop="author">
+        <span itemscope itemtype="http://schema.org/Person">
+            {{partial "authorlink.html" .Params.by }} 
+        </span>
+            </span> 
+              {{if .Params.pay}}
+             <span class="tag">{{.Params.pay}} </span>
+        {{end}}
+        {{partial "tags-link.html" .Params.tags }} 
+            <span class="place-right fg-grayLight">
+        <time itemprop="datePublished" datetime="{{.Date.Format "2006-01-02"}}">{{ .Date.Format "2006年01月02日" }}</time> 
+    </span>
+        </p>
+    </header>
+    <div itemprop="articleBody" class="indent-paragraph">
+
+        {{ .Content }}
+
+    </div> 
+    <div class="padding60 no-padding-top no-padding-left no-padding-right" >
+        <div class="place-left">
+            <a class="command-button fg-black" href="{{.Params.github}}" >
+                <span class="icon mif-github "></span>
+                Github
+                <small>查看提交信息或反馈问题</small> 
+            </a>
+        </div>
+        <div class="place-right">
+            <a class="command-button icon-right fg-black" href="{{.Params.link}}"  >
+                <span class="icon mif-more-horiz"></span>
+                原文 
+                <small>到原网站查看资讯</small> 
+            </a>
+        </div> 
+        </div>
+</article> 
+{{ end }}

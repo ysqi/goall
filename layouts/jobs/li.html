@@ -1,0 +1,25 @@
+<div class="list">
+    <div class="list-content">
+        <span class="list-title"> 
+                <div> 
+                    <a href="{{.URL}}" class="fg-black fg-hover-blue"> {{.Title}}</a>
+                    <a href="{{.Params.link}}" class="mif-link"></a>
+                </div>
+                   </span>
+        <span class="list-remark">
+                 <div class="place-left"> 
+                 <span class="padding10 no-padding-left no-padding-top no-padding-buttom">{{dateFormat "01-02" .Date}}</span> 
+                 <span class="padding10 no-padding-left no-padding-top no-padding-buttom"> {{partial "authorlink.html" .Params.by }}</span>     
+    </div> 
+        {{if .Params.pay}}
+        <span class="tag">{{.Params.pay}} </span>
+        {{end}}
+        {{partial "tags-link.html" .Params.tags }} 
+
+      <small class="place-right fg-grayLighter"> 
+                                        <a href="{{.URL}}"> <span class="mif-bubble"></span></a> 
+                                    </small>
+    
+    </span>
+</div>
+</div>

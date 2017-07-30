@@ -1,0 +1,9 @@
+<div class="ginfo">
+    <h6>最新招聘</h6>
+<ul >
+     {{ $list := where (where .Site.Pages "Section" "jobs") ".Params.notsingle" "!=" true }} 
+     {{ range last 5 $list  }}    
+    <li> <a class="fg-black" href="{{.URL}}"> {{.Title}}</a></li> 
+     {{end}}
+</ul>
+</div>
