@@ -1,0 +1,18 @@
+<div class="padding60 no-padding-top no-padding-left no-padding-right" >
+        <div class="place-left">
+            <a class="command-button icon-right fg-black" href="{{.Params.github}}" >
+                <span class="icon mif-github "></span>
+                Github
+                <small>在GitHub上纠错/编辑此内容</small> 
+            </a>
+        </div>
+        {{if .Params.link}}
+        <div class="place-right">
+            <a class="command-button  fg-black" href="{{.Params.link}}"  >
+                <span class="icon mif-more-horiz"></span>
+                原文 
+                <small>到原网站查看资讯</small> 
+            </a>
+        </div> 
+        {{end}}
+        </div>

@@ -1,0 +1,27 @@
+<div class="list">
+    <div class="list-content">
+        <span class="list-title"> 
+                <div> 
+                    <a href="{{.URL}}" class="fg-black fg-hover-blue"> {{.Title}}</a>
+                    {{if .Params.link}}
+                    <a href="{{.Params.link}}" class="mif-link" title="外部链接"></a>
+                    {{end}}
+                </div>
+                   </span>
+        <span class="list-remark">
+                 <div class="place-left"> 
+                 <span class="padding10 no-padding-left no-padding-top no-padding-buttom">{{dateFormat "01-02" .Date}}</span> 
+                 <span class="padding10 no-padding-left no-padding-top no-padding-buttom"> {{partial "authorlink.html" .Params.by }}</span>     
+                 </div>
+                {{if .Params.book.free}}
+                <span class="tag" >免费</span>
+                {{end}}
+                {{partial "tags-link.html" .Params.tags }} 
+                <span>{{.Params.book.introduction}}</span>
+            <small class="place-right fg-grayLighter"> 
+                 <a href="{{.URL}}"> <span class="mif-bubble"></span></a> 
+            </small>
+    
+    </span>
+</div>
+</div>

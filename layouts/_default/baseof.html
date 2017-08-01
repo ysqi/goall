@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {{partial "header.html" .}}
+</head>
+
+<body>
+    <header>
+        {{partial "appbar.html" .}}
+    </header>
+    <main class="container page-content">
+        <!-- 子节点页菜单 start -->
+        {{partial "section-sub.html" .}}
+        <!--end  -->
+        <div class="grid ">
+            <div class="row cells12">
+                <div class="cell colspan9">
+                    <content>
+                        <!-- 主内容  -->
+                        {{ block "content" . }} {{ end }}
+                    </content>
+                </div>
+                <div class="cell colspan3">
+                    <!-- 右侧栏  -->
+                    {{partial "right-bar.html" .}} 
+                </div>
+            </div>
+        </div>
+
+    </main>
+        {{partial "footer.html" .}}
+</body>
+
+</html>

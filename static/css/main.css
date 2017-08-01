@@ -1,7 +1,23 @@
 main{
   padding-top: 68px;
 }
- 
+.ginfo {
+  border: 1px dashed #ccc;
+}
+hr.split{  
+  background-color:inherit; 
+  /* height:1px; */
+  border:1px dashed #ccc;
+  /* height:5px */
+  /* border-top:1px dashed #ccc; */
+}
+/*文章每段落，前面两个空格  */
+article.entry div.content>p:first-letter{
+      margin-left: 1.9rem;
+}
+.padding-left-5 {
+  padding-right: 5px;
+}
 .listview-outlook .list .list-content a{
   color: #999999;
 }
@@ -13,13 +29,15 @@ main{
 .app-bar.grayLight .app-bar-menu > li > a:hover,
 .app-bar.grayLight .app-bar-element:active,
 .app-bar.grayLight .app-bar-menu > li:active,
+.app-bar.grayLight .app-bar-menu > li.active,
+.app-bar.grayLight .app-bar-menu > li.active > a,
 .app-bar.grayLight .app-bar-menu > li > a:active {
   background-color: #999999;
-  color: #ffffff;
+  color: #ffffff; 
 }
 .app-bar.grayLight .app-bar-divider {
   background-color: #999999;
-}
+} 
 .app-bar.grayLight .app-bar-menu > li > a {
   color: #000;
 } 

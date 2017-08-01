@@ -1,0 +1,8 @@
+
+<div class="fixed-bottom"> 
+{{if eq .Section "news"}}        
+            <a class="button success block-success" href="{{absURL  "news.html"}}" title="最新Golang资讯">最新</a> 
+            <a class="button danger block-danger" href="{{absURL  "news/hot.html"}}" title="热评Golang资讯">热评</a>
+            <a class="button info block-info" href="{{absURL  "news/history.html"}}" title="所有Golang资讯">所有</a>
+            {{end}}
+    </div> 
