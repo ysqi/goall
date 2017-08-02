@@ -1,0 +1,40 @@
+{{ define "content" }} {{ $list := (where .Data.Pages ".Params.notsingle" "==" nil ) }} {{$currentPage:=.}}
+
+<div class="pkgtable">
+  <h4>目录</h4>
+  <ul>
+    {{ range $.Site.Data.pkg.series }} {{$pages := where $list ".Params.series" "==" .id }} {{if ge (len $pages) 1}}
+    <li>
+      <a id="menu-{{.id}}" href="{{$currentPage.URL}}#{{.id}}" class="text-small">{{.name}}</a>
+    </li>
+    {{end}} {{end}}
+  </ul>
+</div>
+
+<div class="pkglist">
+  {{ range $.Site.Data.pkg.series }} {{$pages := where $list ".Params.series" "==" .id }} {{if ge (len $pages) 1}}
+  <h4 id="{{.id}}">{{.name}} <small> 
+    <a href="{{$currentPage.URL}}#menu-{{.id}}" class="mif-vertical-align-top fg-grayLight"></a>  
+    </small></h4>
+  <p class="text-small">
+    {{.description |markdownify }} </p>
+  <ul> 
+    {{range $pages.ByParam "name" }}
+    <li>
+      <a href="{{.URL}}" class="link">{{.Params.name}}</a>
+      <span class="text-small">{{.Params.description}}</span>
+    </li>
+    {{end}}
+  </ul>
+  {{end}} {{ end }}
+</div>
+<!-- 
+<div class="listview-outlook" > 
+
+
+                {{ $list := (where .Data.Pages ".Params.notsingle" "==" nil ) }} 
+                {{ range $list }}
+                 {{ .Render "li"}} 
+                {{end}} 
+</div> -->
+{{ end }}

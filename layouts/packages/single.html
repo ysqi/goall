@@ -1,0 +1,66 @@
+{{ define "content" }}
+<article class="entry writingsentry" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        <h1 itemprop="headline"> 
+            <a rel="bookmark" href="{{.URL}}" class="fg-black">{{ .Title }}</a>
+        </h1>
+        <div   class="fg-grayLight padding10 no-padding-right no-padding-left no-padding-top">
+            <span itemprop="author">
+                <span itemscope itemtype="http://schema.org/Person">
+                    {{partial "authorlink.html" .}} 
+                </span>
+            </span>  
+            {{partial "tags-link.html" .Params.tags }} 
+            <span class="place-right fg-grayLight">
+                 <time itemprop="datePublished" datetime="{{.Date.Format "2006-01-02"}}">{{ .Date.Format "2006年01月02日" }}</time> 
+             </span>
+        </div>
+    </header>
+    <div itemprop="articleBody" >   
+       <div class="content">
+           <p>
+               <dl class="horizontal">
+                            <dt>作者</dt>
+                            <dd>
+                                {{if .Params.author.url}}
+                                <a class="link" href="{{.Params.author.url}}">{{.Params.author.name}}</a>
+                                {{else}}
+                                {{.Params.author.name}}
+                                {{end}}
+                            </dd>
+                             <dt>库首页</dt>
+                            <dd>
+                                <a class="link" href="{{.Params.homepage}}">{{.Params.homepage}}</a>  
+                            </dd>
+                            <dt>源代码</dt>
+                             <dd>
+                                <a class="link" href="{{.Params.repository.url}}">{{.Params.repository.url}}</a>    
+                             </dd>
+                            <dt>授权协议</dt>
+                            <dd>
+                                {{.Params.license}}
+                            </dd>
+                        </dl>
+           </p>
+           {{ .Content }}  
+       </div> 
+    </div> 
+    <div> 
+          
+{{range .Params.book.reads}} 
+<a class="image-button small-button success" href="{{.link}}">
+    {{.name}}
+    <span class="icon mif-file-download"></span>
+</a> 
+{{end}}
+{{range .Params.book.buys}} 
+<a class="image-button small-button" href="{{.link}}">
+    {{.name}}
+    <span class="icon mif-shop"></span>
+</a> 
+{{end}}
+    
+    </div>
+    {{partial "single-bar.html" .}}
+</article> 
+{{ end }}

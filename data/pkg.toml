@@ -1,0 +1,15 @@
+[[series]]
+id = "WebFramework"
+name= "Web 框架"
+description= "Web**完整**开发"
+
+
+[[series]]
+id = "VersionControl"
+name= "版本控制"
+description= "源代码管理库"
+
+[[series]]
+id="Database"
+name="数据库"
+description="Go实现的数据库驱动库"
