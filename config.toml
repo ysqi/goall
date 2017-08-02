@@ -1,3 +1,68 @@
-baseURL = "http://example.org/"
-languageCode = "en-us"
-title = "My New Hugo Site"
+baseURL = "https://goall.top"
+languageCode = "zh-cn"
+title = "Golang资源大全" 
+
+uglyURLs= true
+
+[taxonomies]
+  tag = "tags"
+  category = "categories" 
+  series = "series"
+
+[menu] 
+    [[menu.global]]
+        name = "文章"
+        identifier = "article" 
+        post="/articles/"
+        weight = 1
+        url = "/articles.html"
+    [[menu.global]]
+        name = "资讯"
+        post="/news/"
+        weight = 2
+        identifier = "news"
+        url = "/news.html"
+
+    [[menu.global]]
+        name = "招聘"
+        post="/jobs/"
+        weight = 3
+        identifier = "job"
+        url = "/jobs.html"
+
+    [[menu.global]]
+        name = "书籍"
+        post="/books/"
+        weight = 4
+        identifier = "book"
+        url = "/books.html"
+
+    [[menu.global]]
+        name = "开源库" 
+        weight = 5
+        post="/packages/"
+        identifier = "packages"
+        url = "/packages.html"
+      
+    [[menu.global]]
+        name = "评论墙"
+        weight = 8 
+        post="/comment.html"        
+        identifier = "github" 
+        url = "/comment.html"
+
+    [[menu.global]]
+        name = "关于"
+        weight = 9
+        post="/about.html"                
+        identifier = "github" 
+        url = "/about.html"
+
+
+    #  外部link  
+    [[menu.global]]
+        name = "GitHub"
+        weight = 200
+        post="github.html"                        
+        identifier = "github" 
+        url = "https://github.com/ysqi/goall"
