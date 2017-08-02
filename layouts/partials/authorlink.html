@@ -1,1 +1,10 @@
-<a class="fg-grayLight" href="https://github.com/{{.}}" rel="noflow">{{.}}</a>
+{{if and .Params.submit .Params.submit.by}} 
+     
+    {{if .Params.submit.by.url }}
+    <span>By:
+        <a class="fg-grayLight" href="{{.Params.submit.by.url}}" rel="noflow">{{.Params.submit.by.name}}</a>
+    </span>
+    {{else}}
+    <span>By:{{.Params.submit.by.name}}</span>
+    {{end}}
+{{end}}

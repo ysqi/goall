@@ -11,7 +11,7 @@
         <span class="list-remark">
                  <div class="place-left"> 
                  <span class="padding10 no-padding-left no-padding-top no-padding-buttom">{{dateFormat "01-02" .Date}}</span> 
-                 <span class="padding10 no-padding-left no-padding-top no-padding-buttom"> {{partial "authorlink.html" .Params.by }}</span>     
+                 <span class="padding10 no-padding-left no-padding-top no-padding-buttom"> {{partial "authorlink.html" . }}</span>     
                  </div>
                 {{if .Params.book.free}}
                 <span class="tag" >免费</span>
