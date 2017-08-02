@@ -2,9 +2,13 @@
 title= "{{ replace .TranslationBaseName "-" " " | title }}"
 date= {{.Date}}
 draft= true
-# GitHub提交地址
-github = ""
-
+# 提交信息
+[submit]
+    url = ""
+    [submit.by]
+        name = "ysqi"
+        url = "https://yushuangqi.com"
+ 
 # 图书原地址
 link = ""
 # 作者信息
