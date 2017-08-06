@@ -1,5 +1,6 @@
 {{ define "content" }} 
 <div> 
+    <h1>{{.Title}}</h1>
         {{ $list := where (where .Site.AllPages "Section" "articles") ".Params.notsingle" "!=" true }} 
         {{ range $list.GroupByDate "2006-01" "desc" }} 
             <div >
@@ -13,7 +14,7 @@
                             <span class="fg-grayLighter">{{ .Date.Format "01-02" }}</span>
                             <a href="{{.Permalink}}" class="fg-black fg-hover-blue"> {{.Title}}</a> 
                              {{range .Params.tags}}
-                           <span class="fg-grayLighter">#{{.}}</span> 
+                           <span class="fg-grayLight tag">{{.}}</span> 
                         {{end}} 
                         </li>
                         {{end}}
