@@ -216,7 +216,7 @@
 	width: 100%;
 	height: auto;
 	.clear-float;
-
+  
 	.list {
 		display: block;
 		width: 100%;
@@ -242,7 +242,7 @@
 			}
 
 			.list-title {
-				line-height: 1.3;
+				line-height: 1.3;  
 			}
 
 			.list-subtitle {
@@ -255,34 +255,35 @@
 			.list-remark {
 				font-weight: normal;
 				line-height: 1.2;
-				font-size: .625rem;
+				font-size: .85rem;
 				color: @grayLight;
+				
+				
 			}
+			a{
+				color: inherit;
+				&:hover{
+					color: @linkColor
+				}
+			} 
+
 		}
 	}
 }
 
 .listview-outlook {
-	.list {
-        &:hover {
-            background-color: @grayLighter;
-            outline: none;
-            .list-content {
-                border-left: 3px @transparent solid;
-            }
-        }
-
+	.list {  
 		&.marked {
 			.list-content {
 				border-left: 3px @darkCyan solid;
 			}
 		}
 
-		&:active, &:focus, &.active {
-            background-color: #cde6f7;
-			outline: 1px @grayLight dotted;
-			color: @gray;
-		}
+		// &:active, &:focus, &.active {
+        //     background-color: #cde6f7;
+		// 	outline: 1px @grayLight dotted;
+		// 	color: @gray;
+		// }
 
 	}
 }

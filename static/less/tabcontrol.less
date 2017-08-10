@@ -11,7 +11,7 @@
 		margin: 0;
 		padding: 0;
 		list-style: none inside;
-		border-bottom: 2px @cyan solid;
+		border-bottom: 1px @lighterGray solid;
 		white-space: nowrap;
 		overflow: visible;
 		.clear-float;
@@ -27,28 +27,37 @@
 				display: block;
 				float: left;
 				padding: 8px 24px;
-				color: @dark;
-				font-size: .6875rem;
-				font-weight: bold;
+				margin-right: 2px;
+				color: @linkColor;
 				text-transform: uppercase;
 				position: relative;
 				white-space: nowrap;
+				border: 1px solid transparent;
+				border-radius: 4px 4px 0 0;
+
 			}
 		}
 
 		li {
-
+			&hover,&.active{
+				a{
+					border-color: @lighterGray;
+					border-bottom-color: transparent; 
+				}
+			}
 			&:hover {
 				a {
 					background-color: @grayLighter;
+					color:darken(@linkColor,10%); 
 				}
 			}
 
 			&.active {
 				a {
-					background-color: @cyan;
-					color: @white;
-					.text-shadow;
+					background-color: @white;
+					color: @grayDarker;   
+					border-bottom: 0; 
+					cursor: default; 
 				}
 			}
 

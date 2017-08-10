@@ -9,6 +9,11 @@
 	@name: extract(@color-list, @i);
 
 	.bd-@{name} {border-color: @@name !important;}
+	.bd-t-@{name} {border-top-color: @@name !important;}
+	.bd-l-@{name} {border-left-color: @@name !important;}
+	.bd-b-@{name} {border-bottom-color: @@name !important;}
+	.bd-r-@{name} {border-right-color: @@name !important;}
+	
 	.ol-@{name} {outline-color: @@name !important;}
 	.op-@{name} {background-color: rgba(red(@@name), green(@@name), blue(@@name), .7);}
 	.ribbed-@{name} {background: @@name linear-gradient(-45deg, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent) !important;	background-size: 40px 40px !important;	}

@@ -87,12 +87,13 @@
 @darkerGray:            #222222;
 @lightGray:             #999999;
 @lighterGray:           #eeeeee;
+@link:                  #009a61;
 
 @color-list: black, white, lime, green, emerald, blue, teal, cyan, cobalt, indigo, violet, pink, magenta, crimson, red, orange,
               amber, yellow, brown, olive, steel, mauve, taupe, dark, darkBrown, darkCrimson, darkMagenta, darkIndigo, darkCyan,
               darkCobalt, darkTeal, darkEmerald, darkGreen, darkOrange, darkRed, darkPink, darkViolet, darkBlue, lightBlue,
               lighterBlue, lightTeal, lightOlive, lightOrange, lightPink, lightRed, lightGreen, lightCyan, grayed, grayDarker,
-              grayDark, gray, grayLight, grayLighter, lightGray, lighterGray, darkGray, darkerGray, darker;
+              grayDark, gray, grayLight, grayLighter, lightGray, lighterGray, darkGray, darkerGray, darker,link;
 
 @color-list-length: length(@color-list);
 
@@ -109,16 +110,20 @@
 @menuShadowA: rgba(236, 236, 236, .7);
 
 
+// main color theme
+@mainColor:             #009a61;
+
 // Additional colors
 @textColor: #262626;
 @textColor2: #52677a;
 @subColor: #999999;
-@linkColor: #2086bf;
-@linkVisitedColor: #2086bf;
+@linkColor: @mainColor;
+@linkVisitedColor: @mainColor; 
 @disabledColor: #CACACA;
 @borderColor: #bcd9e2;
 @borderColorButton: #d9d9d9;
 @hintColor: #FFFCC0;
+
 
 @bodyBGColor: #E5E5E5;
 @defaultBGColor: #FFFFFF;
@@ -177,16 +182,16 @@
 
 @tileMDFactor: 1.25;
 
-@appBarBackground: #0072C6;
-@appBarBackgroundActive: #005696;
-@appBarDividerColor: #4C9CD7;
+@appBarBackground: #eeeee9;
+@appBarBackgroundActive: #F3F3F3;
+@appBarDividerColor: #fafafa;
 
 @appBarBackgroundDarcula: #3C3F41;
 @appBarBackgroundActiveDarcula: @dark;
 @appBarDividerColorDarcula: #616162;
 
 @fmElementHoverBackground: #cde6f7;
-@fmTabActiveColor: #0072c6;
+@fmTabActiveColor: @mainColor;
 @fmTabRestColor: #444444;
 @fmTabBackground: #ffffff;
 @fmPanelBackground: #ffffff;

@@ -174,24 +174,23 @@
 }
 
 
-.padding(@all){
-	padding: @all;
-}
-.padding(@top, @left){
-	padding: @top @left;
-}
-.padding(@top, @left, @bottom){
-	padding: @top @left @bottom;
-}
-.padding(@top, @left, @bottom, @right){
-	padding: @top @left @bottom @right;
-}
-
 .generate-padding(10);
 
 .generate-padding(@n, @i: 1) when (@i =< @n) {
 	.padding@{i}0 {
 		padding: unit((@i * 10 / 16), rem) ;
+	}
+	.pt@{i}0 {
+		padding-top: unit((@i * 10 / 16), rem) ;
+	}
+	.pl@{i}0 {
+		padding-left: unit((@i * 10 / 16), rem) ;
+	}
+	.pr@{i}0 {
+		padding-right: unit((@i * 10 / 16), rem) ;
+	}
+	.pb@{i}0 {
+		padding-bottom: unit((@i * 10 / 16), rem) ;
 	}
 	.generate-padding(@n, (@i + 1));
 }
@@ -216,16 +215,30 @@
 .margin(@top, @left, @bottom, @right){
 	margin: @top @left @bottom @right;
 }
-
+ 
 .generate-margin(10);
 
 .generate-margin(@n, @i: 1) when (@i =< @n) {
 	.margin@{i}0 {
 		margin: unit((@i * 10 / 16), rem) ;
 	}
+	.mt@{i}0 {
+		margin-top: unit((@i * 10 / 16), rem) ;
+	}
+	.ml@{i}0 {
+		margin-left: unit((@i * 10 / 16), rem) ;
+	}
+	.mr@{i}0 {
+		margin-right: unit((@i * 10 / 16), rem) ;
+	}
+	.mb@{i}0 {
+		margin-bottom: unit((@i * 10 / 16), rem) ;
+	}
 	.generate-margin(@n, (@i + 1));
 }
 
+
+ 
 .opacity {
 	opacity: .9;
 }
