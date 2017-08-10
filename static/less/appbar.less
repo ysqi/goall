@@ -8,7 +8,10 @@
     width: 100%;
     position: relative;
     background-color: @appBarBackground;
+    border-top: 3px solid @linkColor;
+    box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.1), 0 1px rgba(0,0,0,0.1);
     color: @white;
+
     height: 3.125rem;
     .no-user-select;
     .clear-float;
@@ -17,8 +20,7 @@
         line-height: 3.125rem;
         padding: 0 .625rem;
         font-size: 1rem;
-        cursor: pointer;
-        color: inherit;
+        cursor: pointer; 
         display: block;
         float: left;
         position: relative;
@@ -26,8 +28,13 @@
         height: 3.125rem;
         background-color: inherit;
 
-        &:hover, &:active {
-            background-color: @appBarBackgroundActive;
+        color:#757575;
+        font-size: 16px;
+        font-weight: 500;
+
+        &:hover, &:active, &.active, &.active>a { 
+            color: @linkColor;
+            font-weight: 600;
         }
 
         &.branding {
@@ -165,8 +172,7 @@
         left: 0;
         margin-top: 10px;
         border: 2px solid @appBarBackgroundActive;
-        background: @white;
-
+        background: @white; 
         &:before {
             content: '';
             position: absolute;
@@ -193,6 +199,9 @@
                 left: auto;
                 right: 1rem;
             }
+        }
+        a{
+            color: #ffffff;
         }
     }
 }
