@@ -23,49 +23,56 @@ discuss="https://github.com/ysqi/goall/issues"
 
 [menu] 
     [[menu.global]]
+        name = "首页"
+        identifier = "index" 
+        post=""
+        weight = 1
+        url = "/index.html"
+
+    [[menu.global]]
         name = "文章"
         identifier = "article" 
         post="/articles/"
-        weight = 1
+        weight = 10
         url = "/articles.html"
     [[menu.global]]
         name = "资讯"
         post="/news/"
-        weight = 2
+        weight = 20
         identifier = "news"
         url = "/news.html"
 
     [[menu.global]]
         name = "招聘"
         post="/jobs/"
-        weight = 3
+        weight = 30
         identifier = "job"
         url = "/jobs.html"
 
     [[menu.global]]
         name = "书籍"
         post="/books/"
-        weight = 4
+        weight = 40
         identifier = "book"
         url = "/books.html"
 
     [[menu.global]]
         name = "开源库" 
-        weight = 5
+        weight = 50
         post="/packages/"
         identifier = "packages"
         url = "/packages.html"
       
     [[menu.global]]
         name = "评论墙"
-        weight = 8 
+        weight = 80
         post="/comment.html"        
         identifier = "github" 
         url = "/comment.html"
 
     [[menu.global]]
         name = "关于"
-        weight = 9
+        weight = 90
         post="/about.html"                
         identifier = "github" 
         url = "/about.html"

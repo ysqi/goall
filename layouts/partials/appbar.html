@@ -34,9 +34,16 @@
     <span class="app-bar-divider"></span> 
     <ul class="app-bar-menu">
         {{ range .Site.Menus.global}} 
+            <!-- 首页菜单处理 -->
+            {{if eq "/index.html" .URL}} 
+            <li {{if $.IsHome}}class="active"{{ end }} >
+                     <a href="{{.URL}}" >{{.Name}}</a> 
+            </li>
+            {{else}}
             <li {{if or ($currentPage.IsMenuCurrent "global" .) ( hasPrefix  $currentPage.RelPermalink .Post) }}class="active"{{ end }} >
                 <a href="{{.URL}}" >{{.Name}}</a> 
             </li>
+            {{end}}
         {{end}} 
     </ul> 
 </div> 
