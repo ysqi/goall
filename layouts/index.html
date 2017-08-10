@@ -2,7 +2,7 @@
 
 
 <!--按模块  -->
-<div class="grid">
+<div class="flex-grid">
    
 {{$dict := dict "articles" "最新文章"  "news" "最新资讯" "jobs" "最新招聘" "packages" "开源库"   }}
 {{range $index, $section := (slice "articles" "news" "jobs" "packages")}}
@@ -12,7 +12,7 @@
         </div>  
       {{end}}
       <!-- 两个一行  -->
-      <div class="row cells2">   
+      <div class="row cell-auto-size">   
      {{end}}
      <div class="cell">
       <div class="panel clear">
