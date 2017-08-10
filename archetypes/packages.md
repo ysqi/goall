@@ -9,11 +9,14 @@ name = ""
 # 库协议
 license = "MIT"
 # 库主页
-homepage = ""
+link = ""
 # 库描述
 description = ""
 # 分类
 series = ""
+
+# 关键字
+tags= []
 
 # 作者信息
 [author]
@@ -26,8 +29,6 @@ series = ""
 [bugs]
     url = ""
 
-# 关键字
-keywords= []
 
 # GitHub提交地址
 [submit]
