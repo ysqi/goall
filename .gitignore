@@ -34,3 +34,7 @@ public
 *.sublime-workspace
 nbproject
 Thumbs.db
+
+# build files 
+static/css/goall.css
+static/css/goall.min.css

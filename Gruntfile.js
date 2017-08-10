@@ -24,8 +24,8 @@ module.exports = function(grunt) {
                 ' */\n', 
             }, 
             cssConcat:{
-                src:['.tmp/css/*.css'],
-                dest:'static/css/<%= pkg.name %>.css'
+                src:['.tmp/build/css/*.css'],
+                dest:'.tmp/css/<%= pkg.name %>.css'
             },
         }, 
         // 压缩js
@@ -48,31 +48,31 @@ module.exports = function(grunt) {
             }, 
             compileMan: {
                 src: 'static/less/goall.less',
-                dest: '.tmp/css/<%= pkg.name %>-main.css'
+                dest: '.tmp/build/css/<%= pkg.name %>-main.css'
             },
             compileCore: {
                 src: 'static/less/metro.less',
-                dest: '.tmp/css/<%= pkg.name %>.css'
+                dest: '.tmp/build/css/<%= pkg.name %>.css'
             },
             compileResponsive: {
                 src: 'static/less/metro-responsive.less',
-                dest: '.tmp/css/<%= pkg.name %>-responsive.css'
+                dest: '.tmp/build/css/<%= pkg.name %>-responsive.css'
             },
             compileRtl: {
                 src: 'static/less/metro-rtl.less',
-                dest: '.tmp/css/<%= pkg.name %>-rtl.css'
+                dest: '.tmp/build/css/<%= pkg.name %>-rtl.css'
             },
             compileSchemes: {
                 src: 'static/less/metro-schemes.less',
-                dest: '.tmp/css/<%= pkg.name %>-schemes.css'
+                dest: '.tmp/build/css/<%= pkg.name %>-schemes.css'
             },
             compileColors: {
                 src: 'static/less/metro-colors.less',
-                dest: '.tmp/css/<%= pkg.name %>-colors.css'
+                dest: '.tmp/build/css/<%= pkg.name %>-colors.css'
             },
             compileFont: {
                 src: 'static/less/metro-icons.less',
-                dest: '.tmp/css/<%= pkg.name %>-icons.css'
+                dest: '.tmp/build/css/<%= pkg.name %>-icons.css'
             }
         },
 
@@ -87,15 +87,22 @@ module.exports = function(grunt) {
 
         cssmin: {
             all:{
-                src:'static/css/<%= pkg.name %>.css',
-                dest:'static/css/<%= pkg.name %>.min.css', 
+                src:['.tmp/css/goall.css'],
+                dest:'.tmp/css/goall.min.css', 
             } 
+        },
+        copy: {
+            main: {
+                files: [ 
+                    {expand: true,flatten: true, src: ['.tmp/css/*'], dest: 'static/css/', filter: 'isFile'},
+                ]
+            }
         },
   
         watch: {
             scripts: {
                 files: ['static/less/*.less'],
-                tasks: ['concat',  'less',   'cssmin',]
+                tasks: [ 'less', 'concat','cssmin','copy']
             }
         }
     });
@@ -107,7 +114,8 @@ module.exports = function(grunt) {
         'less', 
         'concat',        
         // 'postcss',
-         'cssmin', 
+        'cssmin',          
+        'copy',
          'watch'
     ]);
 
