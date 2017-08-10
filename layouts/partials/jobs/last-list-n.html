@@ -1,0 +1,6 @@
+<ul >
+     {{ $list := where (where .Site.Pages "Section" "jobs") ".Params.notsingle" "!=" true }} 
+     {{ range first . $list  }}    
+    <li> <a class="fg-black" href="{{.URL}}"> {{.Title}}</a></li> 
+     {{end}}
+</ul>

@@ -1,10 +1,23 @@
 {{if and .Params.submit .Params.submit.by}} 
-     
+    
+    <!-- 详情页  -->
+    {{if and .IsPage (not .Params.notSingle)}}
+         {{if .Params.submit.by.url }}
+            <span>
+                <a  href="{{.Params.submit.by.url}}" rel="noflow"><strong>{{.Params.submit.by.name}}</strong></a>
+            </span>
+            {{else}}
+            <span><strong>{{.Params.submit.by.name}}</strong></span>
+            {{end}}
+    {{else}}
+
     {{if .Params.submit.by.url }}
-    <span>By:
+    <span>
         <a class="fg-grayLight" href="{{.Params.submit.by.url}}" rel="noflow">{{.Params.submit.by.name}}</a>
     </span>
     {{else}}
-    <span>By:{{.Params.submit.by.name}}</span>
+    <span>{{.Params.submit.by.name}}</span>
+    {{end}}
+
     {{end}}
 {{end}}

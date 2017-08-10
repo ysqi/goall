@@ -1,26 +1,7 @@
 {{ define "content" }}
-<div class="grid">
-    <div class="row cells3">
-        <div class="cell">
-            <h5>最新资讯</h5>
-            {{partial "news/last-carousel.html" .}}
-        </div>
-        <div class="cell">
-            <h5>广告牌</h5>
-            {{partial "ads/ad-carousel.html" .}}
-        </div>
-        <div class="cell">
-            <h5 class="mif-fire"> 资讯点击磅</h5>
-            {{partial "news/hot-carousel.html" .}}
-        </div>
-    </div>
-    <div class="row cells">
-        <div class="cell">
-            <ul class="step-list">
-                {{ $list := (where .Data.Pages ".Params.notsingle" "==" nil ) }} {{ range $list }} {{ .Render "li"}} {{end}}
-            </ul>
-        </div>
-
-    </div>
+<div>
+    <ul class="step-list news-list">
+        {{ $list := (where .Data.Pages ".Params.notsingle" "==" nil ) }} {{ range $list }} {{ .Render "li"}} {{end}}
+    </ul>
 </div>
 {{ end }}

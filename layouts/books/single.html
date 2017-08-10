@@ -1,44 +1,36 @@
 {{ define "content" }}
 <article class="entry writingsentry" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
-        <h1 itemprop="headline">
-           {{if .Params.book.free}}
-           <span class="tag success"> 免费</span>
-           {{end}}
-           《 <a rel="bookmark" href="{{.URL}}" class="fg-black">{{ .Title }}</a> 》
-        </h1>
-        <div   class="fg-grayLight padding10 no-padding-right no-padding-left no-padding-top">
-            <span itemprop="author">
-                <span itemscope itemtype="http://schema.org/Person">
-                    {{partial "authorlink.html" . }} 
-                </span>
-            </span> 
-              {{if .Params.author.link}}
-               <span>作者:<a  class="link" href="{{.Params.author.link}}">{{.Params.author.name}}</a> </span>
-              {{else}}
-              <span>{{.Params.author.name}}</span>
-              {{end}}  
-              {{if .Params.book.publisher}}
-              <span>出版社：{{.Params.book.publisher}}</span>
-              <span>出版时间：{{.Params.book.releasedate}}</span>
-              {{end}}
-              {{if .Params.pay}}
-                 <span class="tag">{{.Params.pay}} </span>
-              {{end}}
-                {{partial "tags-link.html" .Params.tags }}
+    <header> 
+        {{partial "single-header.html" .}}
 
-            <span class="place-right fg-grayLight">
-                 <time itemprop="datePublished" datetime="{{.Date.Format "2006-01-02"}}">{{ .Date.Format "2006年01月02日" }}</time> 
-             </span>
-        </div>
     </header>
     <div itemprop="articleBody" >  
         {{if .Params.book.cover}}
-<div class="image-container rounded place-right" style="max-width:300px;max-height:800px;">
+        <div class="image-container rounded place-right" style="max-width:300px;max-height:800px;">
                             <div class="frame"><img src="{{.Params.book.cover}}"></div>
                         </div>
                         {{end}}
        <div class="content">
+            <p>
+                  <dl class="horizontal">
+                      <dt>作者</dt>
+                      <dd>
+                 {{if .Params.author.link}} 
+                 <a  class="link" href="{{.Params.author.link}}">{{.Params.author.name}}</a>  
+              {{else}}
+               {{.Params.author.name}}
+              {{end}}  
+              </dd>
+              
+              {{if .Params.book.publisher}}
+                <dt>出版社</dt>
+                <dd>{{.Params.book.publisher}}</dd>
+                <dt>出版时间</dt>
+                <dd>{{.Params.book.releasedate}}</dd> 
+              {{end}}
+                  </dl>
+            </p>
+
            {{ .Content }} 
        </div> 
     </div> 

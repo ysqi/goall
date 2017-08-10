@@ -3,9 +3,10 @@
      <base href="{{ .Site.BaseURL }}">
     <title> {{ .Title }}  </title>
     <link rel="canonical" href="{{ .Permalink }}">
-   {{range slice "main" "metro" "metro-colors" "metro-responsive"  "metro-icons"}}
+   <!-- {{range slice "main" "metro" "metro-colors" "metro-responsive"  "metro-icons"}}
      <link rel="stylesheet" href="/css/{{.}}.css?v={{ readFile  (printf "static/css/%s.css" .) | md5 }}" /> 
-   {{end}} 
-    
-    {{ if .RSSLink }}<link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Title }}" />{{ end }}
+   {{end}}  -->    
+   <link rel="stylesheet" href="/css/goall.css?v={{ readFile  "static/css/goall.css" | md5 }}" /> 
+   
+  {{ if .RSSLink }}<link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Title }}" />{{ end }}
  

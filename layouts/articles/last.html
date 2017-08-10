@@ -1,9 +1,0 @@
-{{ define "content" }} 
-<h1>{{.Title}}</h1>
-<div class="listview-outlook" >
-    {{ $list := where (where .Site.Pages "Section" "articles") ".Params.notsingle" "!=" true }} 
-    {{ range  where $list "Date" ">" (now.AddDate 0 0 -30)  }}  
-         {{ .Render "li"}}
-    {{ end }}
-</div>
-{{ end }}

@@ -1,32 +1,38 @@
 {{ define "content" }} {{ $list := (where .Data.Pages ".Params.notsingle" "==" nil ) }} {{$currentPage:=.}}
 
 <div class="pkgtable">
-  <h4>目录</h4>
-  <ul>
-    {{ range $.Site.Data.pkg.series }} {{$pages := where $list ".Params.series" "==" .id }} {{if ge (len $pages) 1}}
-    <li>
-      <a id="menu-{{.id}}" href="{{$currentPage.URL}}#{{.id}}" class="text-small">{{.name}}</a>
-    </li>
-    {{end}} {{end}}
-  </ul>
+  <strong>目录</strong>
+  <ul class="taglist"> 
+ {{ range $.Site.Data.pkg.series }}  
+    <li> 
+      <a id="m_{{.id}}" href="{{$currentPage.URL}}#{{.id}}" class="tag text-secondary" >{{.name}}</a>
+    </li> 
+    {{end}} 
+  </ul> 
 </div>
 
 <div class="pkglist">
-  {{ range $.Site.Data.pkg.series }} {{$pages := where $list ".Params.series" "==" .id }} {{if ge (len $pages) 1}}
-  <h4 id="{{.id}}">{{.name}} <small> 
-    <a href="{{$currentPage.URL}}#menu-{{.id}}" class="mif-vertical-align-top fg-grayLight"></a>  
-    </small></h4>
-  <p class="text-small">
-    {{.description |markdownify }} </p>
-  <ul> 
+  {{ range $.Site.Data.pkg.series }}  
+  <strong id="{{.id}}">{{.name}} 
+    <small> 
+    <a href="{{$currentPage.URL}}#m_{{.id}}" class="mif-vertical-align-top fg-grayLight"></a>  
+    </small></strong>
+  <p class="text-secondary indent-paragraph">
+    {{.description |markdownify }} 
+  </p>
+
+  <ul>  
+    {{$pages := where $list ".Params.series" "==" .id }}
     {{range $pages.ByParam "name" }}
     <li>
-      <a href="{{.URL}}" class="link">{{.Params.name}}</a>
-      <span class="text-small">{{.Params.description}}</span>
+      <h2>
+        <a href="{{.URL}}" class="fg-black fg-hover-link">{{.Params.name}}</a> 
+       <small>{{.Params.description}}</small>
+      </h2>
     </li>
     {{end}}
-  </ul>
-  {{end}} {{ end }}
+  </ul> 
+  {{end}}
 </div>
 <!-- 
 <div class="listview-outlook" > 

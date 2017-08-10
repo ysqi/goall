@@ -1,6 +1,6 @@
-{{ $currentPage := . }}
-<div class="app-bar fixed-top grayLight">
-    <a class="app-bar-element">
+{{ $currentPage := . }} 
+<div class="app-bar fixed-top grayLight"  data-role="appbar">
+    <div class="app-bar-element">
         <span id="toggle-tiles-dropdown" class="mif-apps mif-2x"></span>
         <div class="app-bar-drop-container"
                 data-role="dropdown"
@@ -9,27 +9,28 @@
             <div class="tile-container bg-white">
                 <div class="tile-small bg-cyan">
                     <div class="tile-content iconic">
-                        <span class="icon mif-onedrive"></span>
+                        <a class="icon mif-github" href="{{.Site.Params.site.github}}" title="GitHub">   </a> 
                     </div>
                 </div>
-                <div class="tile-small bg-yellow">
+                <div class="tile-small bg-orange">
                     <div class="tile-content iconic">
-                        <span class="icon mif-google"></span>
-                    </div>
-                </div>
-                <div class="tile-small bg-red">
-                    <div class="tile-content iconic">
-                        <span class="icon mif-facebook"></span>
+                        <a class="icon mif-feed3" href="/index.xml" title="Feed订阅本站"></a> 
                     </div>
                 </div>
                 <div class="tile-small bg-green">
                     <div class="tile-content iconic">
-                        <span class="icon mif-twitter"></span>
+                        <a class="icon mif-bubbles" href="{{.Site.Params.site.discuss}}" title="在GitHub上讨论"></a> 
+                         
+                    </div>
+                </div>
+                <div class="tile-small bg-cyan">
+                    <div class="tile-content iconic">
+                        <a class="icon mif-mail" href="mailto:{{.Site.Params.author.email}}" title="邮件联系作者"></a>  
                     </div>
                 </div>
             </div>
         </div> 
-    </a>
+    </div>
     <span class="app-bar-divider"></span> 
     <ul class="app-bar-menu">
         {{ range .Site.Menus.global}} 
@@ -38,4 +39,4 @@
             </li>
         {{end}} 
     </ul> 
-</div>
+</div> 

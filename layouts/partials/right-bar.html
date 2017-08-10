@@ -1,8 +1,28 @@
-{{if .IsPage}}
-                    <div>
-                        {{partial "jobs/last-list.html" .}}
-                    </div>
-                    {{end}}
-                    <div>
-                        <span>广告</span> {{partial "ads/ad-carousel.html" .}}
-                    </div>
+<!-- {{if .IsPage}}
+<div> 
+    {{partial "jobs/last-list.html" .}}
+</div>
+{{end}}   -->
+{{if eq .Section "articles"}}
+<!--文章页  -->
+<div class="cell">
+    <h5>最新文章</h5>
+    {{partial "articles/last-list-n.html" (dict "content" . "numbers" 5 )}}
+</div>
+{{end}} {{if eq .Section "news"}}
+<div class="cell">
+    <h5>最新资讯</h5>
+    {{partial "news/last-carousel.html" .}}
+</div>
+
+<div class="cell">
+    <h5 class="mif-fire"> 资讯点击磅</h5>
+    {{partial "news/hot-carousel.html" .}}
+</div>
+{{end}}
+<!--notSingle  -->
+{{if .IsSection}} {{end}}
+<div class="cell">
+    <h5>广告牌</h5>
+    {{partial "ads/ad-carousel.html" .}}
+</div> 

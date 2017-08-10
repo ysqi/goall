@@ -10,12 +10,13 @@
         {{partial "appbar.html" .}}
     </header>
     <main class="container page-content">
-        <!-- 子节点页菜单 start -->
-        {{partial "section-sub.html" .}}
-        <!--end  -->
         <div class="grid ">
             <div class="row cells12">
                 <div class="cell colspan9">
+                    
+        <!-- 子节点页菜单 start -->
+        {{partial "section-sub.html" .}}
+        <!--end  -->
                     <content>
                         <!-- 主内容  -->
                         {{ block "content" . }} {{ end }}

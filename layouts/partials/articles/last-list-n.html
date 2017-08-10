@@ -1,0 +1,9 @@
+<div class="ginfo"> 
+<ul>
+     {{$content := default . .content }}
+     {{ $list := where (where $content.Site.Pages "Section" "articles") ".Params.notsingle" "!=" true }} 
+     {{ range first .numbers $list  }}    
+    <li> <a class="fg-black" href="{{.URL}}"> {{.Title}}</a></li> 
+     {{end}}
+</ul>  
+</div>

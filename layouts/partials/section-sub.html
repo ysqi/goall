@@ -1,8 +1,19 @@
-
-<div class="fixed-bottom"> 
-{{if eq .Section "news"}}        
-            <a class="button success block-success" href="{{absURL  "news.html"}}" title="最新Golang资讯">最新</a> 
-            <a class="button danger block-danger" href="{{absURL  "news/hot.html"}}" title="热评Golang资讯">热评</a>
-            <a class="button info block-info" href="{{absURL  "news/history.html"}}" title="所有Golang资讯">所有</a>
-            {{end}}
-    </div> 
+{{if in "$articles$news$jobs" .Section }}
+<div class="tabcontrol">
+    <ul class="tabs">
+        {{if eq .Section "articles"}}
+        <li {{if eq .URL "/articles.html"}}class="active" {{end}}><a href="{{absURL  "articles.html"}}">最新</a> </li> 
+        <li {{if eq .URL "/articles/hot.html"}}class="active" {{end}}><a href="{{absURL  "articles/hot.html"}}">热门</a> </li>
+        <li {{if eq .URL "/articles/history.html"}}class="active" {{end}}><a href="{{absURL  "articles/history.html"}}">所有</a> </li>
+        {{end}} {{if eq .Section "news"}}
+        <li {{if eq .URL "/news.html"}}class="active" {{end}}><a href="{{absURL  "news.html"}}" title="最新Golang资讯">最新</a></li>
+        <li {{if eq .URL "/news/hot.html"}}class="active" {{end}}><a href="{{absURL  "news/hot.html"}}" title="热评Golang资讯">热评</a></li>
+        <li {{if eq .URL "/news/history.html"}}class="active" {{end}}><a href="{{absURL  "news/history.html"}}" title="所有Golang资讯">所有</a> </li>
+        {{end}}
+        {{if eq .Section "jobs"}}
+        <li {{if eq .URL "/jobs.html"}}class="active" {{end}}><a href="{{absURL  "jobs.html"}}" title="最新Golang招聘信息">最新</a>  </li>
+        <li {{if eq .URL "/jobs/history.html"}}class="active" {{end}}><a href="{{absURL  "jobs/history.html"}}" title="所有Golang招聘信息">所有</a></li>
+        {{end}}
+    </ul>
+</div>
+{{end}}

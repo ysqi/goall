@@ -2,21 +2,22 @@
     <div class="list-content">
         <span class="list-title"> 
                 <div>
-                     <a href="{{.URL}}" class="fg-black fg-hover-blue"> {{.Title}}</a>
+                    <h2 class="text-accent"> 
+                        <a href="{{.URL}}" > {{.Title}}</a>
                     {{if .Params.link}}
-                    <a href="{{.Params.link}}" class="mif-link" title="外部链接"></a>
-                    {{end}}  </div>
+                    <a href="{{.Params.link}}" class="mif-link" title="{{.Params.link}}"></a>
+                    {{end}}  
+                </h2>
+                </div>
                    </span>
-        <span class="list-remark">
-                 <div class="place-left">
-                <a href="https://github.com/{{.Params.by}}">{{.Params.by}}</a> 在{{dateFormat "15:04" .Date}} 提交 
-                 <span>{{absURL .Params.link }}</span>
-    </div>
-    {{range .Params.tags}}
-    <span class="tag">{{.}}</span> {{end}}
-    <small class="place-right fg-grayLighter"> 
-                                                <a href="{{.URL}}"> <span class="mif-bubble"></span></a> 
-                                            </small>
+        <span class="list-remark"> 
+                <a href="https://github.com/{{.Params.by}}">{{.Params.by}}</a> 在{{dateFormat "15:04" .Date}}发布 
+             
+                 {{partial "tags-link.html" .Params.tags }} 
+ 
+                    <small class="place-right fg-grayLighter"> 
+                       <a href="{{.URL}}"> <span class="mif-bubble"></span></a> 
+                    </small>
     </span>
     </span>
 </div>

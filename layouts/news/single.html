@@ -4,43 +4,41 @@
         <h1 itemprop="headline">
             <a rel="bookmark" href="{{.URL}}" class="fg-black">{{ .Title }}</a>
         </h1>
-        <p class="attribution" class="fg-grayLight">
-            <span itemprop="author">
-        <span itemscope itemtype="http://schema.org/Person">
-            {{partial "authorlink.html" . }} 
-        </span>
+        <div class="attribution" > 
+            <span class="fg-grayLight">
+                 <time itemprop="datePublished" datetime="{{.Date.Format "2006-01-02"}}">{{ .Date.Format "2006-01-02" }}</time> 
             </span>
-            <span>
-       <a href=""></a>
-    </span>
-            <span class="place-right fg-grayLight">
-        <time itemprop="datePublished" datetime="{{.Date.Format "2006-01-02"}}">{{ .Date.Format "2006年01月02日" }}</time> 
-    </span>
-        </p>
+            {{range .Params.tags}}
+                <span class="tag">{{.}}</span> 
+            {{end}}
+            <span itemprop="author"  class="pl10">
+                <span itemscope itemtype="http://schema.org/Person">
+                    {{partial "authorlink.html" . }} 
+                </span>
+            </span> 
+            <span class="pl10"> 
+                <a href="{{.Params.link}}" class="fg-grayLight"><i class="mif-link"></i> {{partial "utils/host.html" .Params.link }}</a>
+            </span>
+        </div>
     </header>
-    <div itemprop="articleBody" class="indent-paragraph">
-
-        {{ .Content }}
-
-    </div> 
-    <div class="padding60 no-padding-top no-padding-left no-padding-right" >
+    <div itemprop="articleBody" class="content"> 
+        {{ .Content }} 
+    </div>
+    <div class="padding60 no-padding-top no-padding-left no-padding-right">
         <div class="place-left">
-            <a class="command-button fg-black" href="{{.Params.github}}" >
+            <a class="command-button fg-black" href="{{.Params.github}}">
                 <span class="icon mif-github "></span>
                 Github
                 <small>查看提交信息或反馈问题</small> 
             </a>
         </div>
         <div class="place-right">
-            <a class="command-button icon-right fg-black" href="{{.Params.link}}"  >
+            <a class="command-button icon-right fg-black" href="{{.Params.link}}">
                 <span class="icon mif-more-horiz"></span>
                 原文 
                 <small>到原网站查看资讯</small> 
             </a>
-        </div> 
         </div>
-</article>
-    <div>
-      {{partial "news/last-list.html" .}}
     </div>
+</article> 
 {{ end }}

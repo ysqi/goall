@@ -1,7 +1,7 @@
 {{ define "content" }}
 <div class="listview-outlook" > 
                 {{ $list := (where .Data.Pages ".Params.notsingle" "==" nil ) }} 
-                {{ range $list }}
+                {{ range $list.ByParam "book.releaseDate" }}
                  {{ .Render "li"}} 
                 {{end}} 
 </div>

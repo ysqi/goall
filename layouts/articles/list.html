@@ -1,7 +1,7 @@
-{{ define "content" }} 
-<h1>{{.Title}}</h1>
-<div class="listview-outlook" >
-    {{ $list := (where .Data.Pages ".Params.notsingle" "==" nil ) }} {{ range $list }}
+{{ define "content" }}  
+<div class="listview-outlook">
+    {{ $list := (where .Data.Pages ".Params.notsingle" "==" nil ) }}
+    {{ range first 100 $list }}
      {{ .Render "li"}}
     {{ end }}
 </div>
