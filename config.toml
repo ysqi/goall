@@ -1,20 +1,23 @@
 baseURL = "https://goall.top"
 languageCode = "zh-cn"
-title = "Golang资源大全" 
+title = "Go资源库" 
 
 uglyURLs= true
 
 ignoreFiles=["\\.less$"]
 
-[params.site]
-github="https://github.com/ysqi/goall"
-issue="https://github.com/ysqi/goall/issues"
-discuss="https://github.com/ysqi/goall/issues"
+[params]
+    description="Go语言资料库，专为中国Gopher提供最方便的Go资源检索。包括文章、资讯、招聘、书籍和库"
 
-[params.author]
-    name="虞双齐"
-    link="https://yushuangqi.com"
-    email="devysq@gmail.com"
+    [params.site]
+    github="https://github.com/ysqi/goall"
+    issue="https://github.com/ysqi/goall/issues"
+    discuss="https://github.com/ysqi/goall/issues"
+
+    [params.author]
+        name="虞双齐"
+        link="https://yushuangqi.com"
+        email="devysq@gmail.com"
 
 [taxonomies]
   tag = "tags"
